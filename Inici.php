@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -28,7 +32,12 @@
         }
 
     </style>
-    <?php   
+    <?php
+      if (isset($_SESSION['Ingredientes'])) {
+          $_SESSION['Ingredientes'] = 1;
+       }else {
+          $_SESSION['Ingredientes']++;
+       }
       echo "<h2>Seleccione los ingredientes:</h2><br>";
       echo "<div>";
         echo ("<form action='Funciones.php' method='POST'>
